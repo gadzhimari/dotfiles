@@ -220,6 +220,9 @@ nnoremap <silent> <bs> <C-w><Left>
 " Including hidden files in search
 let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
+" Find merge conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
 nmap <Leader>o :Files<CR>
 nmap <Leader>r :Tags<CR>
 
