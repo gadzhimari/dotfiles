@@ -24,6 +24,9 @@ Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'markdown'] }
 
 " Autocomplete
 Plug 'jiangmiao/auto-pairs'
@@ -188,9 +191,23 @@ let g:ale_linters = {
 \  'javascript': ['eslint', 'flow'],
 \}
 
+" Run prettier asynchronously before saving
+let g:prettier#autoformat=0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.md PrettierAsync
+
 " upper/lower word
 nmap <Leader>u mQviwU`Q
 nmap <Leader>l mQviwu`Q
+
+" Mappings for moving lines and preserving indentation
+" ∆ is <A-j> on macOS
+" ˚ is <A-k> on macOS
+nnoremap ∆ :m .+1<cr>==
+nnoremap ˚ :m .-2<cr>==
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
 
 nmap <Leader>w :w<CR>
 
