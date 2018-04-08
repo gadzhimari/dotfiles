@@ -15,6 +15,7 @@ Plug 'tpope/vim-ragtag' " endings for html, xml, etc. - ehances surround
 Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
 Plug 'tpope/vim-sensible' " a universal set of defaults that (hopefully) everyone can agree on
 Plug 'tpope/vim-surround' " mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
+Plug 'wellle/targets.vim' " adds various text objects to give you more targets to operate on
 Plug 'tpope/vim-unimpaired' " mappings which are simply short normal mode aliases for commonly used ex commands
 
 " Advanced
@@ -24,9 +25,6 @@ Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'markdown'] }
 
 " Autocomplete
 Plug 'jiangmiao/auto-pairs'
@@ -191,10 +189,6 @@ let g:ale_linters = {
 \  'javascript': ['eslint', 'flow'],
 \}
 
-" Run prettier asynchronously before saving
-let g:prettier#autoformat=0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.md PrettierAsync
-
 " upper/lower word
 nmap <Leader>u mQviwU`Q
 nmap <Leader>l mQviwu`Q
@@ -238,10 +232,12 @@ nnoremap <silent> <bs> <C-w><Left>
 let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 " Find merge conflict markers
-nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+nmap <silent> <leader>fm <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
-nmap <Leader>o :Files<CR>
+nmap <Leader>o :GFiles .<CR>
 nmap <Leader>r :Tags<CR>
+nnoremap <Leader>fc :Commits<CR>
+nnoremap <Leader>ff :Files<CR>
 
 " Mapping selecting mappings
 nmap <Leader><tab> <plug>(fzf-maps-n)
