@@ -65,3 +65,4 @@ mas "Slack", id: 803453959
 mas "Xcode", id: 497799835
 mas "Wunderlist", id: 410628904
 mas "Evernote", id: 406056744
+mas "Telegram", id: 747648890

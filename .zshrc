@@ -91,7 +91,7 @@ ssh-add -A 2>/dev/null;
 autoload -U promptinit; promptinit
 prompt pure
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
