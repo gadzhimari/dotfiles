@@ -17,6 +17,7 @@ Plug 'tpope/vim-sensible' " a universal set of defaults that (hopefully) everyon
 Plug 'tpope/vim-surround' " mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
 Plug 'wellle/targets.vim' " adds various text objects to give you more targets to operate on
 Plug 'tpope/vim-unimpaired' " mappings which are simply short normal mode aliases for commonly used ex commands
+Plug 'ntpeters/vim-better-whitespace' " trail all whitespace characters to be highlighted
 
 " Advanced
 Plug 'w0rp/ale'
@@ -132,6 +133,9 @@ set lazyredraw
 " Faster redrawing
 set ttyfast
 
+" Hide the launch screen
+set shortmess=atI
+
 set cursorline
 " Current buffer can be put into background
 set hidden
@@ -182,9 +186,6 @@ set background=dark
 set cmdheight=2
 set t_Co=256
 colorscheme jellybeans
-
-" Automatically removing all trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
 
 let g:airline#extensions#ale#enabled = 1
 
@@ -248,6 +249,9 @@ let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 " Find merge conflict markers
 nmap <silent> <leader>fm <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
+" Format the entire file
+nnoremap ff :normal! gg=G``<CR>
+
 nmap <Leader>o :GFiles .<CR>
 nmap <Leader>r :Tags<CR>
 nnoremap <Leader>fc :Commits<CR>
@@ -283,3 +287,7 @@ nnoremap [r :ALEPreviousWrap<CR>
 let g:ackprg = 'ag --vimgrep'
 nnoremap <Leader>a :Ack!<Space>
 nnoremap <Leader>A :Ack! '\b<c-r><c-w>\b'<cr>
+
+augroup common
+  autocmd BufEnter * EnableStripWhitespaceOnSave
+augroup END
