@@ -55,6 +55,9 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git brew npm vi-mode tmux)
 
 # User configuration
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 export PATH="usr/local/lib:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"

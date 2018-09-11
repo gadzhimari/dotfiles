@@ -7,17 +7,28 @@ call plug#begin('~/.vim/plugged')
 Plug 'nanotech/jellybeans.vim'
 
 " General
-Plug 'tpope/vim-commentary' " comment stuff out
-Plug 'tpope/vim-dispatch' " asynchronous build and test dispatcher
-Plug 'tpope/vim-endwise' " automatically add end in ruby
-Plug 'tpope/vim-fugitive' " git wrapper for vim
-Plug 'tpope/vim-ragtag' " endings for html, xml, etc. - ehances surround
-Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
-Plug 'tpope/vim-sensible' " a universal set of defaults that (hopefully) everyone can agree on
-Plug 'tpope/vim-surround' " mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
-Plug 'wellle/targets.vim' " adds various text objects to give you more targets to operate on
-Plug 'tpope/vim-unimpaired' " mappings which are simply short normal mode aliases for commonly used ex commands
-Plug 'ntpeters/vim-better-whitespace' " trail all whitespace characters to be highlighted
+" comment stuff out
+Plug 'tpope/vim-commentary'
+" Asynchronous build and test dispatcher
+Plug 'tpope/vim-dispatch'
+" Automatically add end in ruby
+Plug 'tpope/vim-endwise'
+" Git wrapper for vim
+Plug 'tpope/vim-fugitive'
+" Endings for html, xml, etc. - ehances surround
+Plug 'tpope/vim-ragtag'
+" Enables repeating other supported plugins with the . command
+Plug 'tpope/vim-repeat'
+" A universal set of defaults that (hopefully) everyone can agree on
+Plug 'tpope/vim-sensible'
+" Mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
+Plug 'tpope/vim-surround'
+" Adds various text objects to give you more targets to operate on
+Plug 'wellle/targets.vim'
+" Mappings which are simply short normal mode aliases for commonly used ex commands
+Plug 'tpope/vim-unimpaired'
+" Trail all whitespace characters to be highlighted
+Plug 'ntpeters/vim-better-whitespace'
 
 " Advanced
 Plug 'w0rp/ale'
@@ -28,6 +39,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 
 " Autocomplete
+" Insert or delete brackets, parens, quotes in pair
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
 
