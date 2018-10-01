@@ -46,7 +46,7 @@ Plug 'honza/vim-snippets'
 " Search and navigation
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
@@ -54,6 +54,9 @@ Plug 'mileszs/ack.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'moll/vim-node'
+Plug 'prettier/vim-prettier', {
+      \ 'do': 'npm install',
+      \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 
 " PHP
 Plug '2072/PHP-Indenting-for-VIm'
@@ -114,9 +117,6 @@ inoremap <up> <nop>
 
 " Sets how many lines of history VIM has to remember
 set history=1000
-
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
 
 " Enhanced command completion
 set wildmenu
@@ -206,7 +206,8 @@ let g:ale_linters = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\ 'javascript': ['eslint'],
+\ 'javascript': ['prettier'],
+\ 'css': ['prettier'],
 \}
 
 " upper/lower word
@@ -265,7 +266,7 @@ nmap <silent> <leader>fm <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 nnoremap ff :normal! gg=G``<CR>
 
 nmap <Leader>o :GFiles .<CR>
-nmap <Leader>r :Tags<CR>
+nmap <Leader>r :Buffers<CR>
 nnoremap <Leader>fc :Commits<CR>
 nnoremap <Leader>ff :Files<CR>
 
