@@ -55,6 +55,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'moll/vim-node'
 
+" TypeScript
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'ianks/vim-tsx', { 'for': 'typescript' }
+
 " PHP
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'shawncplus/phpcomplete.vim'
@@ -200,11 +204,17 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:ale_linters = {
 \ 'javascript': ['eslint', 'flow'],
+\ 'typescript': ['tsserver', 'tslint'],
+\ 'typescript.tsx': ['tsserver', 'tslint'],
 \}
+
 let g:ale_fix_on_save = 1
+let g:ale_sign_column_always = 1
 let g:ale_fixers = {
-\ 'javascript': ['prettier'],
+\ 'javascript': ['prettier', 'eslint'],
+\ 'scss': ['prettier'],
 \ 'css': ['prettier'],
+\ 'typescript': ['prettier', 'tslint'],
 \}
 
 " upper/lower word

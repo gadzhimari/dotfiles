@@ -55,13 +55,11 @@ cask "teamviewer"
 cask "tunnelblick"
 cask "transmission"
 cask "vlc"
-cask "xld"
 cask "yandexdisk"
 cask "zeplin"
 
 # Mac App Store
 mas "1Password", id: 443987910
-mas "Slack", id: 803453959
 mas "Xcode", id: 497799835
 mas "Wunderlist", id: 410628904
 mas "Evernote", id: 406056744
