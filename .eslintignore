@@ -1,0 +1,10 @@
+# Third party
+node_modules
+
+# Build
+public/
+lib/
+tmp/
+build/
+dist/
+
