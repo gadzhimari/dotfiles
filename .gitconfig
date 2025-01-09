@@ -1,0 +1,13 @@
+[user]
+	name = Gadzhimari Kachaev
+	email = gadzhimari@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFdU/SklBysnAzHEnJyuan2waGJjNUiy3RUCgPmpGuhp
+
+[includeIf "gitdir:~/Projects/work/alfa/"]
+	path = ~/Projects/work/alfa/.gitconfig-work
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
