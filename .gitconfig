@@ -1,3 +1,5 @@
+[init]
+	defaultBranch = main
 [user]
 	name = Gadzhimari Kachaev
 	email = gadzhimari@gmail.com
@@ -11,3 +13,29 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+[branch]
+	# set up 'git pull' to rebase instead of merge
+	autosetuprebase = always
+	sort = -committerdate
+[apply]
+	# do not warn about missing whitespace at EOF
+	whitespace = nowarn
+[core]
+	editor = vim
+	whitespace = cr-at-eol
+[pull]
+	rebase = true
+[push]
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
+	default = simple
+[rebase]
+	# Automatically stash current WD and stage when running rebase
+	autoStash = true
+[diff]
+	# Detect copies as well as renames.
+	renames = copies
+[difftool]
+	prompt = false
+[help]
+	# Automatically correct and execute mistyped commands.
+	autocorrect = 1
