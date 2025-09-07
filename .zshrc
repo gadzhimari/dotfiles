@@ -95,3 +95,7 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+# Adds Golang home directory to the PATH
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
